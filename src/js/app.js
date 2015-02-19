@@ -1,2 +1,3 @@
-// The namespace for this application
-var app = {};
+var app = {
+  router: Rlite()
+};

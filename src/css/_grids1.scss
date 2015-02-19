@@ -1,0 +1,14 @@
+
+
+$grid-columns: 12;
+$max-width: 960px;
+$gutter: 20px;
+
+.list-container {
+  @include outer-container;
+  background-color: blue;
+}
+
+.indi-listing {
+  @include span-columns(3);
+}
