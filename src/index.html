@@ -5,6 +5,7 @@
     <title>Sketchsy</title>
     <link rel="stylesheet" href="css/main.css">
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
@@ -32,16 +33,21 @@
 
   <script type="text/html" id="etsyProfile">
     <div id="profilePageWrapper">
-      <h1><%- m.first_name %> <%- m.last_name %></h1>
-      <img src="<%- m.image_url_75x75 %>" alt="profile pic">
-      <section>
-        <aside>Location</aside>
-        <article><%- m.city %></article>
-      </section>
-      <section>
-        <aside>About</aside>
-        <article><%= m.bio %></article>
-      </section>
+      <div class="name">
+        <h1><%- m.first_name %> <%- m.last_name %></h1>
+        <img src="<%- m.image_url_75x75 %>" alt="profile pic">
+      </div>
+      <div class="information">
+        <section>
+          <aside>Location</aside>
+          <article><%- m.city %></article>
+        </section>
+        <section>
+          <aside>About</aside>
+          <article><%= m.bio %></article>
+        </section>
+      </div>
+
       <!-- <section>
         <aside>Fav Materials</aside>
         <article><%- m.materials %></article>
