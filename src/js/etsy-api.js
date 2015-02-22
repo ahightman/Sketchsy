@@ -21,7 +21,7 @@ app.EtsyApi = function (spec) {
 
   var self = {
     listings: function () {
-      var url = baseUrl + '/listings/active.js?includes=MainImage&api_key=' + spec.apiKey + '&callback=?';
+      var url = baseUrl + '/listings/trending.js?includes=MainImage&api_key=' + spec.apiKey + '&callback=?';
       return fetchUrl(url);
     },
 

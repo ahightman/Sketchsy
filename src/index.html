@@ -4,23 +4,48 @@
     <meta charset="utf-8">
     <title>Sketchsy</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
   <div class="main-content"></div>
 
   <script type="text/html" id="listings">
-    <div class="list-container">
-      <ul>
-        <% m.items.forEach(function (item) { %>
-        <li class="indi-listing">
-          <a class-"listing-title" href="<%- item.url %>">
-            <img src="<%- item.MainImage.url_75x75 %>">
-            <%- item.title %>
-          </a>
-        </li>
-        <% }) %>
-      </ul>
+    <div class="cards">
+      <% m.items.forEach(function (item) { %>
+      <div class="card">
+        <div class="card-image">
+          <div class="price">$<%- item.price %></div>
+          <img src="<%- item.MainImage.url_170x135 %>" alt="">
+        </div>
+        <div class="card-header">
+          <%= item.title %>
+        </div>
+        <div class="card-copy">
+          <button class="buy"><a href="<%- item.url %>">BUY NOW</button>
+          <button class="info"><a href="#profiles/<%- item.user_id %>" class="about-user">ARTIST INFO</button>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </script>
+
+  <script type="text/html" id="etsyProfile">
+    <div id="profilePageWrapper">
+      <h1><%- m.first_name %> <%- m.last_name %></h1>
+      <img src="<%- m.image_url_75x75 %>" alt="profile pic">
+      <section>
+        <aside>Location</aside>
+        <article><%- m.city %></article>
+      </section>
+      <section>
+        <aside>About</aside>
+        <article><%= m.bio %></article>
+      </section>
+      <!-- <section>
+        <aside>Fav Materials</aside>
+        <article><%- m.materials %></article>
+      </section> -->
     </div>
   </script>
 

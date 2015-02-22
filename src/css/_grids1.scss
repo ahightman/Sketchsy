@@ -1,14 +1,140 @@
-
-
-$grid-columns: 12;
-$max-width: 960px;
-$gutter: 20px;
-
-.list-container {
-  @include outer-container;
-  background-color: blue;
+body {
+  background-color: #ecf0f1;
 }
 
-.indi-listing {
-  @include span-columns(3);
+.cards {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  margin-top: 3em;
+}
+
+.card {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-hover-background: lighten($card-background, 5%);
+  $card-image-background: #DBD199;
+  $card-image-hover-background: lighten($card-image-background, 5%);
+  $card-margin: 1em;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 2px 2px 4px darken($base-background-color, 20%);
+  cursor: pointer;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+  position: relative;
+
+  .card-image {
+    overflow: hidden;
+    max-height: 250px;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      background: $card-image-background;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $card-header-background;
+    // border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.3em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    max-height: 50px;
+    overflow: hidden;
+    padding-top: 0em;
+    color: #515151;
+    font-family: 'Lobster', cursive;
+    font-size: 1.2em;
+    margin: .7em;
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    // padding: ($base-spacing / 8) ($base-spacing / 8);
+
+    button {
+      background-color: #8BC34A;
+      width: 49.1%;
+    }
+
+    .info {
+      background-color: white;
+
+    }
+
+    a {
+      color: white;
+    }
+
+    .info a {
+      color: #8BC34A;
+    }
+  }
+
+  .price {
+    @include position(absolute, 0 null null null);
+    z-index: 1000;
+    background-color: black;
+    color: white;
+    padding: .2em;
+    font-family: 'Lobster', cursive;
+    font-size: 1.2em;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $card-hover-background;
+
+    .card-image img {
+      background: $card-image-hover-background;
+    }
+
+    .card-header {
+      background-color: $card-hover-background;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
+
+#profilePageWrapper {
+  background-color: white;
+}
+
+section {
+  @include outer-container;
+  aside { @include span-columns(3); }
+  article { @include span-columns(9); }
 }
