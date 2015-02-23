@@ -40,7 +40,6 @@ body {
   cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
-  position: relative;
 
   .card-image {
     overflow: hidden;
@@ -99,6 +98,7 @@ body {
 
   .price {
     @include position(absolute, 0 null null null);
+    margin-top:
     z-index: 1000;
     background-color: black;
     color: white;
@@ -129,220 +129,83 @@ body {
   }
 }
 
-<<<<<<< HEAD
-.modal {
 
-///////////////////////////////////////////////////////////////////////////////////
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $base-background-color: white !default;
-  $base-font-size: 1em !default;
-  $base-line-height: 1.5em !default;
-  $base-accent-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $light-gray: #DDD !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
-  $base-font-color: $dark-gray !default;
-
-  h1 {
-    margin: 0;
-  }
-
-  p {
-    color: $base-font-color;
-    line-height: $base-line-height;
-  }
-
-//////////////////////////////////////////////////////////////////////////////////
-
-  $modal-padding: 3em;
-  $modal-background: $base-background-color;
-  $modal-close-color: $light-gray;
-  $modal-image-height: 135px;
-  $modal-image-width: $modal-image-height;
-  $modal-trigger-image-width: 300px;
-
-  label {
-    cursor: pointer;
-    margin-bottom: 0;
-  }
-
-  label img {
-    border-radius: $modal-trigger-image-width / 2;
-    display: block;
-    max-width: $modal-trigger-image-width;
-  }
-
-  .modal-state {
-    display: none;
-  }
-
-  .modal-trigger {
-    @include button(flat, $base-accent-color);
-    padding: 0.8em 1em;
-  }
-
-  .modal-window {
-// overlay
-    @include transition(opacity 0.25s ease);
-    @include position(fixed, 0px 0px 0px 0px);
-    background: rgba(0,0,0, 0.85);
-    opacity: 0;
-    padding-top: 0.6em;
-    text-align: left;
-    visibility: hidden;
-    z-index: 99999999999;
-
-    @include media($large-screen) {
-      padding-top: 10em;
-    }
-
-    .modal-bg {
-      @include position(absolute, 0px 0px 0px 0px);
-      cursor: pointer;
-    }
-  }
-
-  .modal-close {
-    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
-    @include size(1.5em);
-    background: $modal-background;
-    cursor: pointer;
-
-    &:after,
-    &:before {
-      @include position(absolute, 3px 3px 0 50%);
-      @include transform(rotate(45deg));
-      @include size(0.15em 1.5em);
-      background: $modal-close-color;
-      content: '';
-      display: block;
-      margin: -3px 0 0 -1px;
-    }
-
-    &:hover:after,
-    &:hover:before {
-      background: darken($modal-close-color, 10%);
-    }
-
-    &:before {
-      @include transform(rotate(-45deg));
-    }
-  }
-
-  .modal-inner {
-    @include transition(opacity 0.25s ease);
-    background: $modal-background;
-    border-radius: $base-border-radius;
-    margin-top: 0;
-    margin: auto;
-    max-height: 95%;
-    overflow: auto;
-    padding: $modal-padding / 2;
-    position: relative;
-    width: 95%;
-
-    @include media($medium-screen) {
-      max-height: 70%;
-      padding: $modal-padding;
-      width: 60%;
-    }
-
-    @include media($large-screen) {
-      width: 50%;
-    }
-
-    h1 {
-      color: $base-font-color;
-      margin-bottom: 0.6em;
-      text-align: left;
-      text-transform: capitalize;
-    }
-
-    .modal-intro {
-      font-weight: 800;
-    }
-
-    .modal-content {
-      color: $base-font-color;
-
-      @include media($medium-screen) {
-        @include columns(2 8em);
-      }
-    }
-
-    a.cta {
-      color: white;
-      display: inline-block;
-      margin-right: 0.5em;
-      margin-top: 1em;
-
-      &:last-child {
-        padding: 0 2em;
-      }
-    }
-  }
-
-  .modal-state:checked + .modal-window {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .modal-state:checked + .modal-window .modal-inner {
-    top: 0.5em;
-  }
-}
-
-.modal-open {
-  overflow: hidden;
-}
-
-
-
-#profilePageWrapper {
-  background-color: white;
-  width: 70%;
-  margin: auto;
-  margin-top: 5%;
-}
-
-.name {
-  margin-left: 2em;
-  background-color: white;
-  width: 15%;
-  padding-bottom: 10em;
-  float: left;
-  padding-left: 4%;
-
-  img {
-    border-radius: 180px;
-    @include size(100px);
-  }
-}
-
-.information {
-  float: left;
-  background-color: white;
-  line-height: 1.4em;
-  text-align: justify;
-}
-
-section {
-  @include outer-container;
-  aside { @include span-columns(2); }
-  article { @include span-columns(9); }
-  border: 1px solid white;
-  float: left;
-}
-
-aside {
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-article {
-  margin-top: 1em;
-  padding: 1em;
-}
+// #profilecards {
+//   max-width: 600px;
+//   max-height: 700px;
+//   margin: auto;
+//   margin-top: 3%;
+// }
+//
+// #profilecard {
+// }
+//
+// #profileimage {
+//   margin: 2%;
+//   text-align: center;
+// }
+//
+// #profile-pic {
+//   @include size(150px);
+//   // float: left;
+// }
+//
+// .username {
+//   // float: right;
+// }
+//
+// #bio p {
+//   // background-color: red;
+//   max-height: 320px;
+//   overflow: hidden;
+//   margin: 2%;
+// }
+//
+// #profilePageWrapper {
+//   background-color: white;
+//   width: 70%;
+//   margin: auto;
+//   margin-top: 5%;
+// }
+//
+// .name {
+//   margin-left: 2em;
+//   background-color: white;
+//   width: 15%;
+//   padding-bottom: 10em;
+//   float: left;
+//   padding-left: 4%;
+//
+//   img {
+//     border-radius: 180px;
+//     @include size(100px);
+//   }
+// }
+//
+// .information {
+//   float: left;
+//   background-color: white;
+//   line-height: 1.4em;
+//   text-align: justify;
+// }
+//
+// section {
+//   @include outer-container;
+//   aside { @include span-columns(2); }
+//   article { @include span-columns(9); }
+//   border: 1px solid white;
+//   float: left;
+// }
+//
+// aside {
+//   font-size: 1.5em;
+//   margin-bottom: 1em;
+//   margin-top: 1em;
+// }
+//
+// article {
+//   margin-top: 1em;
+//   padding: 1em;
+//   aside { @include span-columns(3); }
+//   article { @include span-columns(9); }
+// }

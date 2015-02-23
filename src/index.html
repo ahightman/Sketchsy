@@ -8,12 +8,12 @@
   </head>
   <body>
 
-  <div class="main-content"></div>
+  <div class="cards"></div>
 
   <script type="text/html" id="listings">
-    <div class="cards">
+    <!-- <div class="cards"> -->
       <% m.items.forEach(function (item) { %>
-      <div class="card">
+      <div class="card" id='<%- item.user_id %>'>
         <div class="card-image">
           <div class="price">$<%- item.price %></div>
           <img src="<%- item.MainImage.url_170x135 %>" alt="">
@@ -23,40 +23,29 @@
         </div>
         <div class="card-copy">
           <button class="buy"><a href="<%- item.url %>">BUY NOW</button>
-          <div class="modal">
-            <label for="modal-1">
-              <div class="modal-trigger">Click for Modal</div>
-            </label>
-            <input class="modal-state" id="modal-1" type="checkbox" />
-            <div class="modal-window">
-              <div class="modal-inner">
-                <label class="modal-close" for="modal-1"></label>
-              </div>
+          <button class="info"><a href="#profiles/<%- item.user_id %>" class="about-user">VIEW ARTIST</a></button>
+        </div>
+      </div>
+      <% }) %>
+    </script>
+    <script type="text/html" id="etsyProfile">
+      <div class="backofcard">
+        <div class="cards" id="profilecards">
+          <div class="card" id="profilecard">
+            <div class="card-image" id="profileimage">
+              <img  id="profile-pic" src="<%- m.image_url_75x75 %>" alt="profile pic">
+              <%- m.first_name %> <%- m.last_name %>
+            </div>
+            <div class="card-header">
+            <%= m.city %>
+            </div>
+            <div class="card-copy" id="bio">
+              <!-- <p><%= m.bio %></p> -->
             </div>
           </div>
         </div>
       </div>
-      <% }) %>
-    </div>
-  </script>
-
-  <script type="text/html" id="etsyProfile">
-    <div id="profilePageWrapper">
-      <h1><%- m.first_name %> <%- m.last_name %></h1>
-      <img src="<%- m.image_url_75x75 %>" alt="profile pic">
-      <section>
-        <aside>Location</aside>
-        <article><%- m.city %></article>
-      </section>
-      <section>
-        <aside>About</aside>
-        <article><%= m.bio %></article>
-      </section>
-      <!-- <section>
-        <aside>Fav Materials</aside>
-        <article><%- m.materials %></article>
-      </section> -->
-    </div>
+    <!-- </div> -->
   </script>
 
   <script src="js/vendor.js"></script>
