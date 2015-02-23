@@ -3,12 +3,12 @@ app.router.add('profiles/:userId', function (url) {
 
   app.etsy.userDetail(url.params.userId)
     .done(function (data) {
-      $('.main-content').html(profileTemplate(data.results[0]));
+      $('.modal-inner').html(profileTemplate(data.results[0]));
     })
     .fail(function (req, status, err) {
       console.log('Failed');
       console.log(err);
-      $('.main-content').html(err.error);
+      $('.modal-inner').html(err.error);
     });
 
 });

@@ -24,7 +24,17 @@
         </div>
         <div class="card-copy">
           <button class="buy"><a href="<%- item.url %>">BUY NOW</button>
-          <button class="info"><a href="#profiles/<%- item.user_id %>" class="about-user">ARTIST INFO</button>
+          <div class="modal">
+            <label for="modal-1">
+              <div class="modal-trigger">Click for Modal</div>
+            </label>
+            <input class="modal-state" id="modal-1" type="checkbox" />
+            <div class="modal-window">
+              <div class="modal-inner">
+                <label class="modal-close" for="modal-1"></label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <% }) %>
