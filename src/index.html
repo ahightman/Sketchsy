@@ -22,8 +22,8 @@
           <%= item.title %>
         </div>
         <div class="card-copy">
-          <button class="buy"><a href="<%- item.url %>">BUY NOW</button>
-          <button class="info"><a href="#profiles/<%- item.user_id %>" class="about-user">VIEW ARTIST</a></button>
+          <a class="buy" href="<%- item.url %>">BUY NOW</a>
+          <button class="artist-info info">View Artist</button>
         </div>
       </div>
       <% }) %>
@@ -34,13 +34,12 @@
           <div class="card" id="profilecard">
             <div class="card-image" id="profileimage">
               <img  id="profile-pic" src="<%- m.image_url_75x75 %>" alt="profile pic">
-              <%- m.first_name %> <%- m.last_name %>
             </div>
             <div class="card-header">
-            <%= m.city %>
+            <%- m.first_name %> <%- m.last_name %>
             </div>
             <div class="card-copy" id="bio">
-              <!-- <p><%= m.bio %></p> -->
+            <%= m.city %>
             </div>
           </div>
         </div>

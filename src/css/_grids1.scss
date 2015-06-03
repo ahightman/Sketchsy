@@ -77,28 +77,27 @@ body {
     line-height: 1.5em;
     // padding: ($base-spacing / 8) ($base-spacing / 8);
 
-    button {
+    .buy {
+      display: inline-block;
       background-color: #8BC34A;
       width: 49.1%;
+      padding: 2%;
     }
 
     .info {
       background-color: white;
+      color: #8BC34A;
 
     }
 
     a {
       color: white;
     }
-
-    .info a {
-      color: #8BC34A;
-    }
   }
 
   .price {
     @include position(absolute, 0 null null null);
-    margin-top:
+    // margin-top:
     z-index: 1000;
     background-color: black;
     color: white;
@@ -129,6 +128,16 @@ body {
   }
 }
 
+
+#profilecards {
+  margin: 0;
+}
+
+#profilecard {
+  @include position(absolute, 0 0 0 null);
+  @include fill-parent;
+  margin: 0;
+}
 
 // #profilecards {
 //   max-width: 600px;
